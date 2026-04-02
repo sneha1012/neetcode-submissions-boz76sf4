@@ -1,0 +1,15 @@
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        count = [0] * 3 #we basically make or keep a count of each type 
+        for num in nums:
+            count[num] += 1
+        
+        index = 0
+        for i in range(3):
+            while count[i]:
+                count[i] -= 1
+                nums[index] = i #keep placeing first 0s, 1s, 2s
+                index += 1
+
+        
+        
